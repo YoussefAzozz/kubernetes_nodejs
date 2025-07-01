@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: myapp
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: myapp
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: yossefazozz/k8s_nodejs:v2.0
+          image: yossefazozz/k8s_nodejs:2.1
           ports:
             - containerPort: 5000
           
@@ -32,11 +32,11 @@ spec:
               configMapKeyRef:
                 name: myapp-config
                 key: MODE
-          - name: Port
+          - name: PORT
             valueFrom:  
               configMapKeyRef:
                 name: myapp-config
-                key: Port
+                key: PORT
           - name: EMAIL
             valueFrom:  
               configMapKeyRef:

@@ -4,6 +4,6 @@ metadata:
   name: myapp-config
 data:
   MODE: "development"
-  Port: "5000"
+  PORT: "5000"
   EMAIL: "yossefazozz40@gmail.com"
   cloud_name: "dhqnmgd9y"

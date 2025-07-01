@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: appmongodb
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: appmongodb
@@ -22,14 +22,14 @@ spec:
     spec:
       containers:
         - name: appmongodb
-          image: mongo:latest
+          image: yossefazozz/mongo_k8s:1.0
           ports:
           - containerPort: 27017
           env:
           - name: MONGO_INITDB_ROOT_USERNAME
-            value: "YWRtaW4="
+            value: "appuser"
           - name: MONGO_INITDB_ROOT_PASSWORD
-            value: "cGFzc3dvcmQ="
+            value: "password"
           resources:
             requests:
               memory: "150Mi"
